@@ -1,0 +1,45 @@
+provider: straitly
+label:
+  en_US: Straitly
+description:
+  en_US: One OpenAI-compatible API key for 150+ models including Claude, GPT, Gemini, Grok and DeepSeek.
+icon_small:
+  en_US: straitly.svg
+icon_large:
+  en_US: straitly.svg
+background: "#F7F3EF"
+help:
+  title:
+    en_US: Get your API key from Straitly
+  url:
+    en_US: https://straitly.ai/docs/quickstart
+supported_model_types:
+  - llm
+configurate_methods:
+  - predefined-model
+provider_credential_schema:
+  credential_form_schemas:
+    - variable: api_key
+      label:
+        en_US: API Key
+      type: secret-input
+      required: true
+      placeholder:
+        en_US: Enter your Straitly API key
+    - variable: endpoint_url
+      label:
+        en_US: API Base URL
+      type: text-input
+      required: false
+      placeholder:
+        en_US: Optional, defaults to https://api.straitly.ai/v1
+models:
+  llm:
+    position: models/llm/_position.yaml
+    predefined:
+      - models/llm/*.yaml
+extra:
+  python:
+    provider_source: provider/straitly.py
+    model_sources:
+      - models/llm/llm.py

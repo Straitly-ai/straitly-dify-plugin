@@ -1,0 +1,44 @@
+version: 0.0.1
+type: plugin
+author: straitly
+name: straitly
+label:
+  en_US: Straitly
+description:
+  en_US: One OpenAI-compatible API key for 150+ models including Claude, GPT, Gemini, Grok and DeepSeek.
+icon: straitly.svg
+resource:
+  memory: 268435456
+  permission:
+    model:
+      enabled: true
+      llm: true
+      text_embedding: false
+      rerank: false
+      tts: false
+      speech2text: false
+      moderation: false
+plugins:
+  models:
+    - provider/straitly.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: 1.0.0
+created_at: 2026-11-26T03:45:00Z
+network:
+  domains:
+    - api.straitly.ai
+privacy: PRIVACY.md
+repo: https://github.com/Straitly-ai/straitly-dify-plugin
+contact: support@straitly.ai
+tags:
+  - llm
+  - model_provider
+verified: false
